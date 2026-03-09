@@ -1,10 +1,10 @@
-# MarriageAgency Modelling Exercise --- Documentation Plan
+# marriageAgency.MarriageAgency Modelling Exercise --- Documentation Plan
 
 ## Overview
 
 This document describes the architecture, responsibilities, and
 interactions of the classes defined in the modelling exercise for the
-**MarriageAgency application**. The goal is to translate the UML class
+**marriageAgency.MarriageAgency application**. The goal is to translate the UML class
 diagram and sequence diagrams into a clear implementation structure in
 Java.
 
@@ -19,8 +19,8 @@ The system allows a customer to search for potential matches based on
 age compatibility.\
 The architecture follows a simple object‑oriented design consisting of:
 
--   `Customer`
--   `MarriageAgency`
+-   `marriageAgency.Customer`
+-   `marriageAgency.MarriageAgency`
 
 The behaviour of the system must allow two execution scenarios:
 
@@ -36,7 +36,7 @@ exercise.
 
 ## Core Classes
 
-### MarriageAgency
+### marriageAgency.MarriageAgency
 
 Responsible for managing customers and searching for matches.
 
@@ -49,11 +49,11 @@ Responsibilities:
 
 Main method:
 
-    findMatches(Customer): List<Customer>
+    findMatches(marriageAgency.Customer): List<marriageAgency.Customer>
 
 ------------------------------------------------------------------------
 
-### Customer
+### marriageAgency.Customer
 
 Represents a person registered in the marriage agency.
 
@@ -69,8 +69,8 @@ Responsibilities:
 
 Main methods:
 
-    match(Customer): boolean
-    appropriateAge(Customer): boolean
+    match(marriageAgency.Customer): boolean
+    appropriateAge(marriageAgency.Customer): boolean
     getAge(): int
 
 ------------------------------------------------------------------------
@@ -81,19 +81,19 @@ The dependency flow of the system is:
 
     User
       ↓
-    MarriageAgency
+    marriageAgency.MarriageAgency
       ↓
-    Customer.match()
+    marriageAgency.Customer.match()
       ↓
-    Customer.appropriateAge()
+    marriageAgency.Customer.appropriateAge()
       ↓
-    Customer.getAge()
+    marriageAgency.Customer.getAge()
 
 Explanation:
 
-1.  The user interacts only with the `MarriageAgency`.
-2.  `MarriageAgency` coordinates the matching process.
-3.  The `Customer` class performs the compatibility logic.
+1.  The user interacts only with the `marriageAgency.MarriageAgency`.
+2.  `marriageAgency.MarriageAgency` coordinates the matching process.
+3.  The `marriageAgency.Customer` class performs the compatibility logic.
 4.  `getAge()` provides the data required for comparison.
 
 ------------------------------------------------------------------------
@@ -105,7 +105,7 @@ Explanation:
 Execution steps:
 
 1.  User calls `findMatches(c1)`
-2.  MarriageAgency creates a result list
+2.  marriageAgency.MarriageAgency creates a result list
 3.  Agency iterates over registered customers (`c2`)
 4.  `c1.match(c2)` is called
 5.  `appropriateAge(c2)` compares ages
@@ -138,7 +138,7 @@ Result:
 
 # 5. Class Responsibilities
 
-## MarriageAgency
+## marriageAgency.MarriageAgency
 
 Responsibilities:
 
@@ -148,12 +148,12 @@ Responsibilities:
 
 Key methods:
 
-    addCustomer(Customer)
-    findMatches(Customer)
+    addCustomer(marriageAgency.Customer)
+    findMatches(marriageAgency.Customer)
 
 ------------------------------------------------------------------------
 
-## Customer
+## marriageAgency.Customer
 
 Responsibilities:
 
@@ -163,8 +163,8 @@ Responsibilities:
 
 Key methods:
 
-    match(Customer)
-    appropriateAge(Customer)
+    match(marriageAgency.Customer)
+    appropriateAge(marriageAgency.Customer)
     getAge()
 
 ------------------------------------------------------------------------
@@ -173,7 +173,7 @@ Key methods:
 
 The data used in matching is minimal.
 
-    Customer.age
+    marriageAgency.Customer.age
 
 Matching logic compares:
 
@@ -192,9 +192,9 @@ This rule can be replaced by more advanced logic in future versions.
 
 ### Separation of Responsibilities
 
-MarriageAgency: - Controls process - Stores customers
+marriageAgency.MarriageAgency: - Controls process - Stores customers
 
-Customer: - Implements matching logic
+marriageAgency.Customer: - Implements matching logic
 
 This separation follows the **Single Responsibility Principle**.
 
@@ -216,8 +216,8 @@ Future improvements could include:
 
 The system design is intentionally simple:
 
--   `MarriageAgency` manages and coordinates matching.
--   `Customer` encapsulates compatibility logic.
+-   `marriageAgency.MarriageAgency` manages and coordinates matching.
+-   `marriageAgency.Customer` encapsulates compatibility logic.
 -   Matching is performed through a loop over registered customers.
 -   The system supports both successful and unsuccessful match
     scenarios.
