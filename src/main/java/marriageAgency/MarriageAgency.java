@@ -3,7 +3,7 @@ package marriageAgency;
 import java.util.ArrayList;
 
 public class MarriageAgency {
-    private final ArrayList<Customer> customers = new ArrayList<Customer>();
+    private final ArrayList<Customer> customers = new ArrayList<>();
 
     public void addCustomer(Customer c){
         customers.add(c);
@@ -12,7 +12,7 @@ public class MarriageAgency {
     public ArrayList<Customer> findMatches(Customer c){
         ArrayList<Customer> matches = new  ArrayList<>();
         for (Customer c1 : customers){
-            if (c1.appropriateAge(c)){
+            if (c1.match(c)){
                 matches.add(c1);
             }
         }

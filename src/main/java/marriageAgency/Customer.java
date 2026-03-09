@@ -14,7 +14,7 @@ public class Customer {
     }
 
     public boolean match(Customer c){
-        return true;
+        return appropriateAge(c);
     }
 
     public boolean appropriateAge(Customer c){
