@@ -216,20 +216,67 @@ Rapporter skal vise:
 
 ## 5.1 Lidt data
 
-Medarbejdere identificeres i systemet ved hjælp af **initialer på op til 4 bogstaver**. Eksempler på sådanne initialer kan være `huba` (Hubert Baumeister), `wilo` (William Lopez) og `anda` (Annemette A. Damgaard). Initialerne fungerer som den unikke identifikation af medarbejdere i systemet.
+- Medarbejdere identificeres i systemet ved **initialer på op til 4 bogstaver**.
+- Initialerne fungerer som **unik identifikation** i systemet.
 
-Projekter skal tildeles et **projektnummer automatisk af systemet**. Projektnummeret skal have formen *årstal efterfulgt af et løbenummer*. Eksempler på projektnumre kan være `26001`, `26002` osv. Derudover skal hvert projekt også kunne have **et projektnavn**.
+**Eksempler:**
+- `huba` – Hubert Baumeister
+- `wilo` – William Lopez
+- `anda` – Annemette A. Damgaard
 
-Systemet er beregnet til **internt brug i virksomheden**, og derfor er der ikke behov for egentlig adgangskontrol. Brugere skal derfor kun angive deres **initialer** for at benytte systemet, og der kræves ikke passwords.
+### Projekter
+- Projektnumre tildeles **automatisk af systemet**.
+- Format: **årstal + løbenummer**
 
-Listen over medarbejdere importeres fra virksomhedens **HR-system** via en fil. I denne fil indeholder hver linje ét medarbejderinitial. Derfor er det ikke nødvendigt, at systemet har funktionalitet til manuel oprettelse af medarbejdere. Systemet skal som minimum indeholde medarbejderen med initialerne `huba`.
+**Eksempler:**
+- `26001`
+- `26002`
+
+- Projekter skal også kunne have et **projektnavn**.
+
+### Adgang til systemet
+- Systemet er **kun til internt brug**.
+- Der kræves **ingen adgangskontrol**.
+- Brugere identificerer sig kun ved **initialer**.
+- **Passwords er ikke nødvendige**.
+
+### Medarbejderdata
+- Medarbejderlisten **importeres fra HR-systemet**.
+- Import sker via **en fil** hvor:
+  - hver linje indeholder **ét medarbejderinitial**.
+- Systemet skal **ikke understøtte manuel oprettelse af medarbejdere**.
+- Systemet skal som minimum indeholde medarbejderen:
+  - `huba`
 
 ---
 
 ## 5.2 Afgrænsning
 
-Som minimum ønsker kunden, at systemet gør det muligt for en medarbejder at **oprette et projekt** samt **oprette og tilføje aktiviteter til projektet**. Det skal derefter være muligt at **tilføje medarbejdere til en aktivitet** og **tilknytte en projektleder til projektet**. Medarbejdere skal kunne **registrere arbejdstid på aktiviteter**, så deres tidsforbrug kan følges.
+Systemet skal som minimum understøtte følgende funktioner:
 
-Derudover skal systemet kunne **generere en rapport**, der viser hvor meget tid der allerede er brugt på et projekt sammenlignet med den **budgetterede tid**.
+### Projektstyring
+- En medarbejder kan **oprette et projekt**.
+- En medarbejder kan **oprette en aktivitet i et projekt**.
+- En medarbejder kan **tilføje aktiviteter til et projekt**.
 
-Det er ikke et krav, at systemet kan **gemme data i en fil eller i en database**. Systemet skal have en **brugergrænseflade**, men det er heller ikke et krav, at denne er grafisk. Det betyder, at systemet eksempelvis kan implementeres med en **tekstbaseret brugergrænseflade**.
+### Ressourcestyring
+- En medarbejder kan **tilføje medarbejdere til en aktivitet**.
+- En medarbejder kan **tilknytte en projektleder til et projekt**.
+
+### Timeregistrering
+- Medarbejdere kan **registrere arbejdstid på aktiviteter**.
+
+### Rapportering
+- Systemet kan **generere en rapport** der viser:
+  - hvor meget tid der er brugt på projektet
+  - sammenligning mellem **faktisk tidsforbrug og budgetteret tid**
+
+### Databehandling
+- Det er **ikke et krav**, at systemet kan:
+  - gemme data i filer
+  - gemme data i en database
+
+### Brugergrænseflade
+- Systemet skal have **en brugergrænseflade**.
+- Det er **ikke et krav**, at brugergrænsefladen er grafisk.
+- Systemet kan derfor implementeres med en **tekstbaseret brugergrænseflade (CLI)**.
